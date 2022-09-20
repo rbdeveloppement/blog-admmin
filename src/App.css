@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+.sidenav {
+  visibility : visible important ;
+  transform : translateX ( 0 ) !important ;
+  width : 200px !important ;
+  }
+  .main {
+    width : calc ( 100vw - 200px );
+    margin-left : 185px ;
+    }
