@@ -4,7 +4,16 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import BaseScreen from "./components/screens/BaseScreen";
-
+import LoginScreen from "./components/screens/LoginScreen";
+import AccountScreen from "./components/screens/AccountScreen";
+import ArticleScreen from "./components/screens/ArticleScreen";
+import TagScreen from "./components/screens/TagScreen";
+import ThemeScreen from "./components/screens/ThemeScreen";
+import LandingScreen from "./components/screens/LandingScreen";
+import TagDetailScreen from "./components/screens/TagDetailScreen";
+import ThemeDetailScreen from "./components/screens/ThemeDetailScreen";
+import ArticleDetailScreen from "./components/screens/ArticleDetailScreen";
+import AccountDetailScreen from "./components/screens/AccountDetailScreen";
 
 
 function App() {
@@ -12,13 +21,16 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<BaseScreen />}>
-          <Route index element={<h1> Landing Screen </h1>} />
-          <Route path="/login" element={<h1> Login Screen </h1>} />
-          <Route path="/appusers" element={<h1> List of users </h1>} />
-          <Route path="/accounts" element={<h1> List of accounts </h1>} />
-          <Route path="/articles" element={<h1> List of articles </h1>} />
-          <Route path="/tags" element={<h1> List of tags </h1>} />
-          <Route path="/themes" element={<h1> List of themes </h1>} />
+          <Route index element={<LandingScreen />} />
+          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/accounts" element={<AccountScreen />} />
+          <Route path="/account/:id" element={<AccountDetailScreen/>} />
+          <Route path="/articles" element={<ArticleScreen />} />
+          <Route path="/articles/:id" element={<ArticleDetailScreen/>} />
+          <Route path="/themes" element={<ThemeScreen />} />
+          <Route path="/theme/:id" element={<ThemeDetailScreen/>} />
+          <Route path="/tags" element={<TagScreen />} />
+          <Route path="/tag/:id" element={<TagDetailScreen/>} />
           <Route path="*" element={<h1> 404 not found </h1>} />
         </Route>
       </Routes>
